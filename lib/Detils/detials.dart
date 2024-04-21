@@ -75,7 +75,7 @@ class _derialscreenState extends State<derialscreen> {
                                 child: Icon(Icons.favorite_border_outlined),
                               ),
                               Padding(
-                                padding: EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(2.0),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -83,7 +83,7 @@ class _derialscreenState extends State<derialscreen> {
                                       widget.map['price'],
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
-                                          color: Colors.black),
+                                          color: Colors.green,fontSize:20),
                                     ),
                                     Text(
                                       widget.map['fname'],
@@ -105,7 +105,7 @@ class _derialscreenState extends State<derialscreen> {
                                           color: Colors.black),
                                     ),
                                     Text(
-                                      'Organic Mountain works as a seller for many organic growers of organic lemons. Organic lemons are easy to spot in your produce aisle. They are just like regular lemons, but they will usually have a few more scars on the outside of the lemon skin. Organic lemons are considered to be the world s finest lemon for more',
+                                      'Organic Mountain works as a seller for many organic growers of organic lemons. Organic lemons are easy to spot in your produce aisle. They are just like regular lemons, but they will usually have a few more scars on the outside of the lemon skin. Organic lemons are considered to be the world s finest lemon for more ...',
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
                                           color: Colors.black),

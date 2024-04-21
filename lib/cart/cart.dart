@@ -15,6 +15,21 @@ class _CartscreenState extends State<Cartscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: InkWell(
+          onTap: () {
+            setState(() {
+              Navigator.of(context).popAndPushNamed('/home');
+            });
+          },
+          child: Icon(Icons.arrow_back),
+        ),
+        centerTitle: true,
+        title:  Text(
+          'My Cart',
+          style: TextStyle(fontWeight: FontWeight.w700, fontSize: 24),
+        ),
+      ),
 
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -109,37 +124,8 @@ class _CartscreenState extends State<Cartscreen> {
   }
 
   Row Cart(BuildContext context) {
-    return Row(
-      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Container(
-          margin: EdgeInsets.only(left: 10, top: 30, right: 10),
-          height: 80,
-          width: 364,
-          // decoration: BoxDecoration(color: Colors.grey),
-          child: Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              InkWell(
-                onTap: () {
-                  setState(() {
-                    Navigator.of(context).pop('/cart');
-                  });
-                },
-                child: Icon(Icons.arrow_back),
-              ),
-              SizedBox(
-                width: 120,
-              ),
-              Text(
-                'My Cart',
-                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 24),
-              ),
-            ],
-          ),
-        )
-      ],
-    );
+    return Row(children: [],);
+
   }
 
   Container cart({
