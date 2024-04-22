@@ -1,3 +1,4 @@
+import 'package:big_cart_ecomarce_app/utils/golbal.dart';
 import 'package:flutter/material.dart';
 
 class paymentscreen extends StatefulWidget {
@@ -34,7 +35,10 @@ class _paymentscreenState extends State<paymentscreen> {
                           InkWell(
                             onTap: () {
                               setState(() {
-                                Navigator.of(context).pop('/home');
+                                qty=0;
+                                amount=0;
+                                total=0;
+                                Navigator.of(context).pop('/cart');
                               });
                             },
                             child: Icon(Icons.arrow_back),
@@ -57,7 +61,7 @@ class _paymentscreenState extends State<paymentscreen> {
               ],
             ),
             Container(
-              height: 600,
+              height: 400,
               width: 370,
               padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
@@ -76,7 +80,7 @@ class _paymentscreenState extends State<paymentscreen> {
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                         Text(
-                          '0',
+                          '$amount',
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                       ],
@@ -85,24 +89,11 @@ class _paymentscreenState extends State<paymentscreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'GST % ',
+                          'GST  18% ',
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                         Text(
-                          '0',
-                          style: TextStyle(color: Colors.black, fontSize: 22),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Discount ',
-                          style: TextStyle(color: Colors.black, fontSize: 22),
-                        ),
-                        Text(
-                          '0',
+                          '$total',
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                       ],
@@ -111,11 +102,11 @@ class _paymentscreenState extends State<paymentscreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'total',
+                          'Total',
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                         Text(
-                          '0',
+                          '$total',
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                       ],
@@ -124,7 +115,7 @@ class _paymentscreenState extends State<paymentscreen> {
                     DropdownButton(
                       value: 'Online',
                       icon: Icon(Icons.arrow_drop_down),
-                      isExpanded:true,
+
 
 
                       items: [DropdownMenuItem(child: Text("Online"), value: 'Online',),
@@ -142,6 +133,7 @@ class _paymentscreenState extends State<paymentscreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
+                          margin: EdgeInsets.only(top: 50),
                           height: 50,width: 100,
                           decoration: BoxDecoration(
                               color: Colors.green,

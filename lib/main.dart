@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/':(context) => splashscreen(),
         '/splash':(context)=>splashsecondscreen(),
         '/home':(context)=>homescreen(),
+        '/det':(context)=>detailsScreen(),
         '/cart':(context)=>Cartscreen(),
         '/pay':(context)=>paymentscreen(),
         '/Success':(context)=>SuccessScreen(),

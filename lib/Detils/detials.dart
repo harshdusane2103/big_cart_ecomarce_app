@@ -1,19 +1,20 @@
 import 'package:big_cart_ecomarce_app/Home/homescreen.dart';
+import 'package:big_cart_ecomarce_app/utils/golbal.dart';
 import 'package:big_cart_ecomarce_app/utils/list.dart';
 import 'package:flutter/material.dart';
 
-class derialscreen extends StatefulWidget {
-  const derialscreen({super.key, required this.map});
-
-  final Map map;
+class detailsScreen extends StatefulWidget {
+  const detailsScreen({super.key});
 
   @override
-  State<derialscreen> createState() => _derialscreenState();
+  State<detailsScreen> createState() => _detailsScreenState();
 }
 
-class _derialscreenState extends State<derialscreen> {
+class _detailsScreenState extends State<detailsScreen> {
   @override
   Widget build(BuildContext context) {
+
+
     // var list = ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       // backgroundColor: Colors.red,
@@ -39,7 +40,7 @@ class _derialscreenState extends State<derialscreen> {
                         // color: Colors.green,
                         image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage(widget.map['image']),
+                      image: AssetImage(imgColunmfirstlist[selectindex]['image']),
                     )),
                     alignment: Alignment.topLeft,
                     child: InkWell(
@@ -80,20 +81,20 @@ class _derialscreenState extends State<derialscreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      widget.map['price'],
+                                imgColunmfirstlist[selectindex]['price'],
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
                                           color: Colors.green,fontSize:20),
                                     ),
                                     Text(
-                                      widget.map['fname'],
+                                      imgColunmfirstlist[selectindex]['fname'],
                                       style: TextStyle(
                                           fontSize: 22,
                                           fontWeight: FontWeight.bold,
                                           color: Colors.black),
                                     ),
                                     Text(
-                                      widget.map['cname'],
+                                      imgColunmfirstlist[selectindex]['cname'],
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
                                           color: Colors.black),
@@ -141,6 +142,7 @@ class _derialscreenState extends State<derialscreen> {
                                                   ),
                                                 ],
                                               )),
+                                          SizedBox(width:10,),
                                           Container(
                                             margin: EdgeInsets.only(
                                                 top: 10, left: 5),
@@ -154,51 +156,40 @@ class _derialscreenState extends State<derialscreen> {
                                                     bottomRight:
                                                         Radius.circular(10))),
                                             child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
-                                                SizedBox(
-                                                  width: 7,
+                                                Container(
+                                                  height:20,
+                                                  width: 20,
+                                                  color: Colors.white,
+                                                  child: InkWell(
+                                                      onTap:() {
+                                                       setState(() {
+                                                         if(count>1)
+                                                         {
+                                                           count--;
+                                                         }
+                                                       });
+                                                      },child: Icon(Icons.remove,color: Colors.green,)),
                                                 ),
-                                                FloatingActionButton(
-                                                  onPressed: () {
-                                                    setState(() {
-                                                      if (count != 0) {
-                                                        count--;
-                                                      }
-                                                    });
-                                                  },
-                                                  backgroundColor: Colors.white,
-                                                  child: Icon(
-                                                    Icons.remove,
-                                                    color: Colors.green,
-                                                  ),
+                                                Container(
+                                                  height:20,
+                                                  width: 20,
+                                                  color: Colors.white,
+                                                  child: Text('$count',style: TextStyle(color: Colors.black,fontSize:18),),
                                                 ),
-                                                SizedBox(
-                                                  width: 8,
+                                                Container(
+                                                  height:20,
+                                                  width: 20,
+                                                  color: Colors.white,
+                                                  child: InkWell(
+                                                      onTap:() {
+                                                       setState(() {
+                                                         count++;
+                                                       });
+                                                      },child: Icon(Icons.add,color: Colors.green,)),
                                                 ),
-                                                Text(
-                                                  '$count',
-                                                  style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 20),
-                                                ),
-                                                SizedBox(
-                                                  width: 7,
-                                                ),
-                                                FloatingActionButton(
-                                                  onPressed: () {
-                                                    setState(() {
-                                                      count++;
-                                                    });
-                                                  },
-                                                  backgroundColor: Colors.white,
-                                                  child: Icon(
-                                                    Icons.add,
-                                                    color: Colors.green,
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 7,
-                                                ),
+
                                               ],
                                             ),
                                           ),
@@ -208,10 +199,27 @@ class _derialscreenState extends State<derialscreen> {
                                     InkWell(
                                       onTap: () {
                                         setState(() {
+                                          cartlist.add(imgColunmfirstlist[selectindex]);
+                                          bool status=false;
+                                          int index=0;
+                                          for(int i=0;i<cartlist.length;i++)
+                                            {
+                                              if(cartlist[i]['name']==imgColunmfirstlist[selectindex]['name'])
+                                                {
+                                                  index=i;
+                                                  status=true;
+                                                }
+                                            }
+                                          if(status){
+                                            cartlist[index]['quanity']++;
+                                          }
+                                          else{
+                                            cartlist.add(
+                                                imgColunmfirstlist[selectindex]);
+                                          };
                                           Navigator.of(context)
                                               .pushNamed('/cart');
-                                          selectindex =0;
-                                          cartlist.add(widget.map);
+
                                         });
                                       },
                                       child: Container(
