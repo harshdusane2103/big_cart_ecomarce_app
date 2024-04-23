@@ -1,3 +1,4 @@
+import 'package:big_cart_ecomarce_app/cart/cart.dart';
 import 'package:big_cart_ecomarce_app/utils/golbal.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +36,7 @@ class _paymentscreenState extends State<paymentscreen> {
                           InkWell(
                             onTap: () {
                               setState(() {
-                                qty=0;
+                                count=0;
                                 amount=0;
                                 total=0;
                                 Navigator.of(context).pop('/cart');
@@ -80,7 +81,7 @@ class _paymentscreenState extends State<paymentscreen> {
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                         Text(
-                          '$qty',
+                          '$count',
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                     ]

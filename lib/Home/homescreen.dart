@@ -110,22 +110,7 @@ class _homescreenState extends State<homescreen> {
                          Navigator.of(context).pushNamed('/det');
                        });
                      },child: boxmain(imgColunmfirstlist[index]['image'],imgColunmfirstlist[index]['price'],imgColunmfirstlist[index]['fname'],imgColunmfirstlist[index]['cname'],))
-                // Column(
-                //   children: [...List.generate(imgColunmfirstlist.length, (index) =>InkWell(
-                //     onTap: (){setState(() {
-                //      Navigator.of(context).push(MaterialPageRoute(builder: (context) => derialscreen(map: imgColunmfirstlist[index]),));
-                //     });},
-                //     child: boxmain(imgColunmfirstlist[index]['image'],imgColunmfirstlist[index]['price'],imgColunmfirstlist[index]['fname'],imgColunmfirstlist[index]['cname'],
-                //     ),
-                //   ),)],
-                //
-                // ),
-                // Column(
-                //   children: [...List.generate(imgColunmsecondlist.length, (index) =>InkWell(onTap:(){setState(() {
-                //   Navigator.of(context).push(MaterialPageRoute(builder: (context) => derialscreen(map: imgColunmsecondlist[index]),));
-                //   });},
-                //       child: boxmain(imgColunmsecondlist[index]['image'],imgColunmsecondlist[index]['price'],imgColunmsecondlist[index]['fname'],imgColunmsecondlist[index]['cname'],)),)],
-                //
+
              )   // )
               ],
 

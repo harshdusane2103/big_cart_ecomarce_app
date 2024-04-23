@@ -77,7 +77,7 @@ class _CartscreenState extends State<Cartscreen> {
                             ),
 
                             Text(
-                              cartlist[index]['price'],
+                              cartlist[index]['price'].toString(),
                               style: TextStyle(
                                   color: Colors.green, fontSize: 18, fontWeight: FontWeight.w700),
                             ),
@@ -175,37 +175,32 @@ class _CartscreenState extends State<Cartscreen> {
           children: [
                InkWell(
                  onTap: () {
+                   //
 
-                   setState(() {
-                  for (int i = 0; i < cartlist.length; i++) {
-                    count = (count + cartlist[i]['quanity']).toInt();
-                    amount =( amount + cartlist[i]['price']*cartlist[i]['count']);
+                   for (int i = 0; i < cartlist.length; i++) {
+                     count = (count + cartlist[i]['quanity']).toInt();
 
-                  }
-                  total=((amount*18)/100)+amount;
+                     amount =( amount + cartlist[i]['price'])*cartlist[i]['quanity'];
 
-                   });
+                   }
+                   total=((amount*18)/100)+amount;
+                   Navigator.of(context).pushNamed('/pay');
                  },
 
-                 child: InkWell(
-                   onTap: () {
-                     Navigator.of(context).pushNamed('/pay');
-                   },
-                   child: Container(
-                      margin: EdgeInsets.only(top: 50),
-                      height: 50,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      alignment: Alignment.center,
-                      child: Text(
-                        'Payment',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ),
+                 child: Container(
+                    margin: EdgeInsets.only(top: 50),
+                    height: 50,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(5),
                     ),
-                 ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Payment',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                  ),
                ),
 
 

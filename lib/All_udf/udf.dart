@@ -160,7 +160,7 @@ Container cat2() {
   );
 }
 
-Container boxmain(String image, String price, String fname, String cname) {
+Container boxmain(String image, int price, String fname, String cname) {
   return Container(
     margin: EdgeInsets.only(left: 8, right: 8, top: 8),
     height: 224,
@@ -187,7 +187,7 @@ Container boxmain(String image, String price, String fname, String cname) {
             ),
             // Text(,style:TextStyle(fontWeight: FontWeight.w500,color: Colors.black) ,),
             Text(
-              price,
+              '$price',
               style:
                   TextStyle(fontWeight: FontWeight.w500, color:Colors.green),
             ),

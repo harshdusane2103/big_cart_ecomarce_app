@@ -81,7 +81,7 @@ class _detailsScreenState extends State<detailsScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                imgColunmfirstlist[selectindex]['price'],
+                                imgColunmfirstlist[selectindex]['price'].toString(),
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
                                           color: Colors.green,fontSize:20),
@@ -172,6 +172,7 @@ class _detailsScreenState extends State<detailsScreen> {
                                                        });
                                                       },child: Icon(Icons.remove,color: Colors.green,)),
                                                 ),
+
                                                 Container(
                                                   height:20,
                                                   width: 20,
