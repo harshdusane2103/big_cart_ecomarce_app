@@ -68,8 +68,8 @@ List imgColunmfirstlist=[
 
   },
   { 'price':'6',
-    'image':'asstes/Images/broccoli.jpeg',
-    'fname':'Fresh B roccoli',
+    'image':'asstes/Images/apk.jpeg',
+    'fname':'Apple',
     'cname':'1 Kg',
   'quanity':1,
     'cartBool' : false,

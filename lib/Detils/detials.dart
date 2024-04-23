@@ -199,27 +199,27 @@ class _detailsScreenState extends State<detailsScreen> {
                                     InkWell(
                                       onTap: () {
                                         setState(() {
-                                          cartlist.add(imgColunmfirstlist[selectindex]);
-                                          bool status=false;
-                                          int index=0;
-                                          for(int i=0;i<cartlist.length;i++)
-                                            {
-                                              if(cartlist[i]['name']==imgColunmfirstlist[selectindex]['name'])
-                                                {
-                                                  index=i;
-                                                  status=true;
-                                                }
-                                            }
-                                          if(status){
-                                            cartlist[index]['quanity']++;
-                                          }
-                                          else{
-                                            cartlist.add(
-                                                imgColunmfirstlist[selectindex]);
-                                          };
+                                        cartlist.add(imgColunmfirstlist[selectindex]);
+                                        //   bool status=false;
+                                        //   int index=0;
+                                        //   for(int i=0;i<cartlist.length;i++)
+                                        //     {
+                                        //       if(cartlist[i]['name']==imgColunmfirstlist[selectindex]['name'])
+                                        //         {
+                                        //           index=i;
+                                        //           status=true;
+                                        //         }
+                                        //     }
+                                        //   if(status){
+                                        //     cartlist[index]['quanity']++;
+                                        //   }
+                                        //   else{
+                                        //     cartlist.add(
+                                        //         imgColunmfirstlist[selectindex]);
+                                        //   };
                                           Navigator.of(context)
                                               .pushNamed('/cart');
-
+                                        //
                                         });
                                       },
                                       child: Container(

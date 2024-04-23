@@ -178,9 +178,11 @@ class _CartscreenState extends State<Cartscreen> {
 
                    setState(() {
                   for (int i = 0; i < cartlist.length; i++) {
-                    qty = (qty + cartlist[i]).toInt();
-                    amount = amount + cartlist[i]['price'];
+                    count = (count + cartlist[i]['quanity']).toInt();
+                    amount =( amount + cartlist[i]['price']*cartlist[i]['count']);
+
                   }
+                  total=((amount*18)/100)+amount;
 
                    });
                  },

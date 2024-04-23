@@ -76,15 +76,30 @@ class _paymentscreenState extends State<paymentscreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Subtotal  ',
+                          'Qunatiy  ',
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                         Text(
-                          '$amount',
+                          '$qty',
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
-                      ],
+                    ]
                     ),
+                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Total',
+                              style: TextStyle(color: Colors.black, fontSize: 22),
+                            ),
+                            Text(
+                              '$amount',
+                              style: TextStyle(color: Colors.black, fontSize: 22),
+                            ),
+
+                          ],
+                        ),
+
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
