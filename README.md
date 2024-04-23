@@ -24,7 +24,7 @@ samples, guidance on mobile development, and a full API reference.
   <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/pa.png" width=22% height=35% align=center>
   <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/add_address.png" width=22% height=35% align=center>
   <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/order_success.png" width=22% height=35% align=center>
-   <vedio src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/hd.mp4" width=22% height=35% align=center>
+   <video src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/hd.mp4"width=22% height=35% align=center></video>
 
    
 
