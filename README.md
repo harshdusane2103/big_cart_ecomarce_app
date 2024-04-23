@@ -19,11 +19,12 @@ samples, guidance on mobile development, and a full API reference.
   <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/splash_second.png" width=22% height=35% align=center>
   <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/home-1.png" width=22% height=35% align=center>
   <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/home-2.png" width=22% height=35% align=center>
-  <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/details.png" width=22% height=35% align=center>
-  <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/pay.png" width=22% height=35% align=center>
+    <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/m_c.png" width=22% height=35% align=center>
+  <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/dt.png" width=22% height=35% align=center>
+  <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/pa.png" width=22% height=35% align=center>
   <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/add_address.png" width=22% height=35% align=center>
   <img src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/order_success.png" width=22% height=35% align=center>
-   <vedio src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/vedio.mp4" width=22% height=35% align=center>
+   <vedio src="https://github.com/harshdusane2103/big_cart_ecomarce_app/blob/master/hd.mp4" width=22% height=35% align=center>
 
    
 
