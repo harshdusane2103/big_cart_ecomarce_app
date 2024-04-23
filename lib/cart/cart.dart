@@ -109,6 +109,7 @@ class _CartscreenState extends State<Cartscreen> {
                               setState(() {
                                 if (count > 1) {
                                   count--;
+
                                 }
                               });
                             },
@@ -150,8 +151,8 @@ class _CartscreenState extends State<Cartscreen> {
 
                               onTap: () {
                                 setState(() {
-                                  cartlist[index]['quanity'] = 1;
-                                  cartlist.removeAt(selectindex);
+                                  cartlist[index]['quanity']=1;
+                                  cartlist.removeAt(index);
                                 });
                               },
                               child: const Icon(
@@ -176,9 +177,8 @@ class _CartscreenState extends State<Cartscreen> {
                InkWell(
                  onTap: () {
                    //
-
                    for (int i = 0; i < cartlist.length; i++) {
-                     count = (count + cartlist[i]['quanity']).toInt();
+                     count = (count + cartlist[i]['quanity']++).toInt();
 
                      amount =( amount + cartlist[i]['price'])*cartlist[i]['quanity'];
 
@@ -202,8 +202,6 @@ class _CartscreenState extends State<Cartscreen> {
                     ),
                   ),
                ),
-
-
           ],
         ),
       ),
@@ -216,6 +214,6 @@ class _CartscreenState extends State<Cartscreen> {
     );
   }
 }
-
+int index=0;
 int selectindex = 0;
-int count = 0;
+int count = 1;

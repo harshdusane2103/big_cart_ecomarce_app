@@ -9,6 +9,7 @@ import 'package:big_cart_ecomarce_app/pay/payment.dart';
 import 'package:flutter/material.dart';
 
 import 'Detils/detials.dart';
+import 'Home/Categori.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/':(context) => splashscreen(),
         '/splash':(context)=>splashsecondscreen(),
         '/home':(context)=>homescreen(),
+        '/cate':(context)=> cateScreen(),
         '/det':(context)=>detailsScreen(),
         '/cart':(context)=>Cartscreen(),
         '/pay':(context)=>paymentscreen(),

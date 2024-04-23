@@ -78,7 +78,7 @@ class _homescreenState extends State<homescreen> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      Navigator.of(context).pushNamed('/cat');
+                      Navigator.of(context).pushNamed('/cate');
                     });
                   },
                   child: Icon(

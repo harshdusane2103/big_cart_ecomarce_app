@@ -27,7 +27,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
             child: Container(
               height:680,
               width: 382,
-              color: Colors.black12,
+              color: Colors.grey.shade50,
               child:  Column(
                 children: [
                   Row(
