@@ -24,8 +24,6 @@ List addresslist=[
 
 ];
 
-
-
 List iconlist=[
   {
     'name':'Vegtables',
@@ -118,7 +116,18 @@ List imgColunmfirstlist=[
   },
 
 ];
+// asstes/Images/slider.png
 
 
+List bannnerlist=[
 
+  {'image':'asstes/Images/banner-2.avif',
+    'text':'',
+  },
+  {'image':'asstes/Images/banner-3.avif','text':'',},
+
+  {'image':'asstes/Images/slider.png',
+    'text':'20% off on your\n first purchase',
+  },
+];
 

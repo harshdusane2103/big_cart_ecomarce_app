@@ -77,7 +77,7 @@ class _CartscreenState extends State<Cartscreen> {
                             ),
 
                             Text(
-                              cartlist[index]['price'].toString(),
+                             '\$ ${cartlist[index]['price'].toString()}',
                               style: TextStyle(
                                   color: Colors.green, fontSize: 18, fontWeight: FontWeight.w700),
                             ),
@@ -107,10 +107,7 @@ class _CartscreenState extends State<Cartscreen> {
                         InkWell(
                             onTap: () {
                               setState(() {
-                                if (count > 1) {
-                                  count--;
-
-                                }
+                               cartlist[index]['quanity']--;
                               });
                             },
                             child: Icon(
@@ -120,14 +117,14 @@ class _CartscreenState extends State<Cartscreen> {
                         SizedBox(
                           width: 8,
                         ),
-                        Text('$count'),
+                        Text(cartlist[index]['quanity'].toString()),
                         SizedBox(
                           width: 7,
                         ),
                         InkWell(
                             onTap: () {
                               setState(() {
-                                count++;
+                                cartlist[index]['quanity']++;
                               });
                             },
                             child: Icon(
@@ -176,14 +173,14 @@ class _CartscreenState extends State<Cartscreen> {
           children: [
                InkWell(
                  onTap: () {
-                   //
-                   for (int i = 0; i < cartlist.length; i++) {
-                     count = (count + cartlist[i]['quanity']++).toInt();
 
+                   for (int i = 0; i < cartlist.length; i++) {
+
+                     qty = (qty + cartlist[i]['quanity']++).toInt();
                      amount =( amount + cartlist[i]['price'])*cartlist[i]['quanity'];
 
                    }
-                   total=((amount*18)/100)+amount;
+                   totalamount=((amount*18)/100)+amount;
                    Navigator.of(context).pushNamed('/pay');
                  },
 
@@ -216,4 +213,4 @@ class _CartscreenState extends State<Cartscreen> {
 }
 int index=0;
 int selectindex = 0;
-int count = 1;
+int count =0;

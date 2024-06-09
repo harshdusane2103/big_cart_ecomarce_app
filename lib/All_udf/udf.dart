@@ -12,7 +12,7 @@ Container serachbar() {
     height: 50,
     width: 352,
     decoration: BoxDecoration(
-      border: Border.all(color: Colors.black12, width: 2),
+      border: Border.all(color: Colors.grey.shade300, width: 2),
       borderRadius: BorderRadius.circular(10),
       color: Colors.grey.shade50,
     ),
@@ -36,17 +36,17 @@ Container serachbar() {
   );
 }
 
-Container silder() {
+Container silder({required String image,required String text}) {
   return Container(
-    margin: EdgeInsets.only(top:10, left: 16, right: 16),
+    margin: EdgeInsets.only(top:10, left: 16),
     height: 250,
     width: 352,
     decoration: BoxDecoration(
-        border: Border.all(color: Colors.black12, width: 2),
+        border: Border.all(color: Colors.grey.shade300, width: 2),
         borderRadius: BorderRadius.circular(10),
         image: DecorationImage(
           fit: BoxFit.fill,
-          image: AssetImage('asstes/Images/slider.png'),
+          image: AssetImage(image),
         )),
     child: Row(
       children: [
@@ -58,8 +58,8 @@ Container silder() {
               // color:Colors.black38
               ),
           child: Text(
-            '20% off on your\n first purchase',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            text,
+            style: TextStyle( fontSize: 20),
           ),
         )
       ],
@@ -187,7 +187,7 @@ Container boxmain(String image, int price, String fname, String cname) {
             ),
             // Text(,style:TextStyle(fontWeight: FontWeight.w500,color: Colors.black) ,),
             Text(
-              '$price',
+             '\$'' $price',
               style:
                   TextStyle(fontWeight: FontWeight.w500, color:Colors.green),
             ),
@@ -245,39 +245,4 @@ Container boxmain(String image, int price, String fname, String cname) {
   );
 }
 
-Container downbar() {
-  return Container(
-    height: 50,
-    width: 380,
-    decoration: BoxDecoration(
-      color: Colors.grey.shade100,
-    ),
-    child: Row(
-      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SizedBox(width: 50),
-        Icon(
-          Icons.home,
-          size: 30,
-        ),
-        SizedBox(width: 50),
-        Icon(
-          Icons.favorite_border_outlined,
-          size: 30,
-        ),
-        SizedBox(width: 50),
-        Icon(
-          Icons.shopping_bag_outlined,
-          size: 30,
-        ),
-        SizedBox(
-          width: 50,
-        ),
-        Icon(
-          Icons.history,
-          size: 30,
-        )
-      ],
-    ),
-  );
-}
+

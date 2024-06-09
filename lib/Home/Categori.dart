@@ -28,7 +28,7 @@ class _cateScreenState extends State<cateScreen> {
               margin: EdgeInsets.all(10),
               height:120,
               width:100,
-              color:Colors.grey.shade200,
+              color:Colors.white,
               child: Column(
                 children: [
                   Container(

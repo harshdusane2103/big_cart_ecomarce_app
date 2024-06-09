@@ -1,9 +1,10 @@
 
-import 'package:big_cart_ecomarce_app/Detils/detials.dart';
+
 import 'package:big_cart_ecomarce_app/utils/list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:marquee_widget/marquee_widget.dart';
 
 import '../All_udf/udf.dart';
 import '../utils/golbal.dart';
@@ -19,7 +20,7 @@ class _homescreenState extends State<homescreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: Colors.grey.shade50,
       appBar: AppBar(
         leading:           Padding(
           padding: const EdgeInsets.all(8.0),
@@ -65,12 +66,18 @@ class _homescreenState extends State<homescreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+
               serachbar(),
 
               ],
             ),
-            Row(
-              children: [silder()],
+            Marquee(
+              // animationDuration: Duration(microseconds: 50),
+              autoRepeat: true,
+              child: Row(
+
+                children: [ ... List.generate(bannnerlist.length, (index) => silder(image:bannnerlist[index]['image'],text: bannnerlist[index]['text']))],
+              ),
             ),
             Row(
               children: [
@@ -119,7 +126,43 @@ class _homescreenState extends State<homescreen> {
           ],
         ),
       ),
-      bottomNavigationBar: downbar(),
+      bottomNavigationBar: Container(
+        height: 50,
+        width: 380,
+        decoration: BoxDecoration(
+          color: Colors.grey.shade100,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+
+            Icon(
+              Icons.home,
+              size: 30,
+            ),
+
+            Icon(
+              Icons.favorite_border_outlined,
+              size: 30,
+            ),
+
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pushNamed('/cart');
+              },
+              child: Icon(
+                Icons.shopping_bag_outlined,
+                size: 30,
+              ),
+            ),
+
+            Icon(
+              Icons.history,
+              size: 30,
+            )
+          ],
+        ),
+      ),
     );
   }
 

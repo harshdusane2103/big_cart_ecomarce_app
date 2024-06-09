@@ -35,12 +35,10 @@ class _paymentscreenState extends State<paymentscreen> {
                         children: [
                           InkWell(
                             onTap: () {
-                              setState(() {
-                                count=0;
-                                amount=0;
-                                total=0;
-                                Navigator.of(context).pop('/cart');
-                              });
+                              qty=0;
+                              amount=0;
+                              totalamount=0;
+                              Navigator.of(context).pop('/cart');
                             },
                             child: Icon(Icons.arrow_back),
                           ),
@@ -81,7 +79,7 @@ class _paymentscreenState extends State<paymentscreen> {
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                         Text(
-                          '$count',
+                          '$qty',
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                     ]
@@ -108,10 +106,7 @@ class _paymentscreenState extends State<paymentscreen> {
                           'GST  18% ',
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
-                        Text(
-                          '$total',
-                          style: TextStyle(color: Colors.black, fontSize: 22),
-                        ),
+
                       ],
                     ),
                     Row(
@@ -122,7 +117,7 @@ class _paymentscreenState extends State<paymentscreen> {
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                         Text(
-                          '$total',
+                          '$totalamount',
                           style: TextStyle(color: Colors.black, fontSize: 22),
                         ),
                       ],

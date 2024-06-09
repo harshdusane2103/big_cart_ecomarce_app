@@ -13,8 +13,6 @@ class detailsScreen extends StatefulWidget {
 class _detailsScreenState extends State<detailsScreen> {
   @override
   Widget build(BuildContext context) {
-
-
     // var list = ModalRoute.of(context)!.settings.arguments as Map;
     return Scaffold(
       // backgroundColor: Colors.red,
@@ -40,7 +38,8 @@ class _detailsScreenState extends State<detailsScreen> {
                         // color: Colors.green,
                         image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage(imgColunmfirstlist[selectindex]['image']),
+                      image:
+                          AssetImage(imgColunmfirstlist[selectindex]['image']),
                     )),
                     alignment: Alignment.topLeft,
                     child: InkWell(
@@ -73,7 +72,8 @@ class _detailsScreenState extends State<detailsScreen> {
                               Positioned(
                                 top: 10,
                                 right: 10,
-                                child: Icon(Icons.favorite_border_outlined),
+                                child: Icon(Icons.favorite_border_rounded,
+                                    size: 32, color: Colors.red),
                               ),
                               Padding(
                                 padding: EdgeInsets.all(2.0),
@@ -81,10 +81,11 @@ class _detailsScreenState extends State<detailsScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                imgColunmfirstlist[selectindex]['price'].toString(),
+                                      '\$ ${imgColunmfirstlist[selectindex]['price']}',
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
-                                          color: Colors.green,fontSize:20),
+                                          color: Colors.green,
+                                          fontSize: 20),
                                     ),
                                     Text(
                                       imgColunmfirstlist[selectindex]['fname'],
@@ -111,87 +112,30 @@ class _detailsScreenState extends State<detailsScreen> {
                                           fontWeight: FontWeight.w500,
                                           color: Colors.black),
                                     ),
+
                                     Container(
+
                                       child: Row(
+
+
                                         children: [
+                                          SizedBox(width: 10,),
                                           Container(
-                                              margin: EdgeInsets.only(
-                                                  top: 10, left: 5),
-                                              height: 50,
-                                              width: 157,
-                                              decoration: BoxDecoration(
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.only(
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  10),
-                                                          bottomLeft:
-                                                              Radius.circular(
-                                                                  10))),
-                                              alignment: Alignment.center,
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    'Quantity  ',
-                                                    style: TextStyle(
-                                                        color: Colors.black,
-                                                        fontSize: 18),
-                                                  ),
-                                                ],
-                                              )),
-                                          SizedBox(width:10,),
-                                          Container(
-                                            margin: EdgeInsets.only(
-                                                top: 10, left: 5),
+                                            margin: EdgeInsets.only(top: 10, left: 5),
                                             height: 50,
-                                            width: 157,
+                                            width: 315,
                                             decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.only(
-                                                    topRight:
-                                                        Radius.circular(10),
-                                                    bottomRight:
-                                                        Radius.circular(10))),
-                                            child: Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                Container(
-                                                  height:20,
-                                                  width: 20,
-                                                  color: Colors.white,
-                                                  child: InkWell(
-                                                      onTap:() {
-                                                       setState(() {
-                                                         if(count>1)
-                                                         {
-                                                           count--;
-                                                         }
-                                                       });
-                                                      },child: Icon(Icons.remove,color: Colors.green,)),
-                                                ),
-
-                                                Container(
-                                                  height:20,
-                                                  width: 20,
-                                                  color: Colors.white,
-                                                  child: Text('$count',style: TextStyle(color: Colors.black,fontSize:18),),
-                                                ),
-                                                Container(
-                                                  height:20,
-                                                  width: 20,
-                                                  color: Colors.white,
-                                                  child: InkWell(
-                                                      onTap:() {
-                                                       setState(() {
-                                                         count++;
-                                                       });
-                                                      },child: Icon(Icons.add,color: Colors.green,)),
-                                                ),
-
-                                              ],
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            alignment: Alignment.center,
+                                            child: Text(
+                                              'Per Quanity \$ ${imgColunmfirstlist[selectindex]['price']}',
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -199,36 +143,35 @@ class _detailsScreenState extends State<detailsScreen> {
                                     ),
                                     InkWell(
                                       onTap: () {
-                                        setState(() {
-                                          // cartlist.add(imgColunmfirstlist[selectindex]);
+                                        // cartlist.add(imgColunmfirstlist[selectindex]);
 
-                                          bool status=false;
-                                          int index=0;
-                                          for(int i=0;i<cartlist.length;i++)
-                                            {
-                                              if(cartlist[i]['name'] == imgColunmfirstlist[selectindex]['name'])
-                                                {
-                                                  index=i;
-                                                  status=true;
-                                                }
-                                            }
-
-                                          if(status){
-                                            cartlist[index]['quanity']++;
+                                        bool status = false;
+                                        int index = 0;
+                                        for (int i = 0;
+                                            i < cartlist.length;
+                                            i++) {
+                                          if (cartlist[i]['fname'] ==
+                                              imgColunmfirstlist[selectindex]
+                                                  ['fname']) {
+                                            index = i;
+                                            status = true;
                                           }
-                                          else{
-                                            cartlist.add(imgColunmfirstlist[selectindex]);
-                                          };
-                                          Navigator.of(context)
-                                              .pushNamed('/cart');
-                                        //
-                                        });
+                                        }
 
+                                        if (status) {
+                                          cartlist[index]['quanity']++;
+                                        } else {
+                                          cartlist.add(
+                                              imgColunmfirstlist[selectindex]);
+                                        }
+                                        ;
+                                        Navigator.of(context)
+                                            .pushNamed('/cart');
                                       },
                                       child: Container(
                                         margin: EdgeInsets.only(
                                           top: 10,
-                                          left: 5,
+                                          left: 15,
                                         ),
                                         height: 60,
                                         width: 315,
@@ -246,6 +189,7 @@ class _detailsScreenState extends State<detailsScreen> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
+
                                             SizedBox(
                                               width: 60,
                                             ),
@@ -287,3 +231,4 @@ class _detailsScreenState extends State<detailsScreen> {
 }
 
 int count = 0;
+bool click = false;
